@@ -50,11 +50,6 @@ section {
     min-height: 100vh;
 }
 
-.wrapper {
-    position: relative;
-    width: 100%;
-}
-
 .overlay {
     position: absolute;
     inset: 0;
@@ -152,22 +147,27 @@ video {
 
 .carousel {
     position: relative;
-    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 430px;
+    height: 100%;
+    border-radius: 10px;
     margin: auto;
     overflow: hidden;
 }
 
 .carousel-images {
     display: flex;
+    height: 100%;
     transition: transform 0.5s ease;
 }
 
 .carousel-images img {
-    width: 350px; 
-    height: 450px;
+    width: 450px; 
     object-fit: cover;
-    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
 }
 
 .carousel-controls {
@@ -210,9 +210,6 @@ video {
     justify-content: center;
     align-items: center;
     gap: 6pc;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
 }
 
 .info {
@@ -230,4 +227,90 @@ video {
 
 .two .line {
     width: 140px;
+}
+
+.three {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.three .overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #213737 100%),  
+                linear-gradient(0deg, rgba(0, 0, 0, 0) 60%, #213737 100%);
+    z-index: -1;
+}
+
+.three .video-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: -2;
+}
+
+.three video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.diamond-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.diamond {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diamond img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.diamond-text {
+    margin-top: 30px;
+    max-width: 520px;
+}
+
+.diamond-text h1 {
+    font-size: 2.5rem;
+    font-family: "BioRhyme", serif;
+}
+
+.diamond-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.diamond-container .diamond:nth-child(2) {
+    width: 400px;
+    height: 400px;
 }
