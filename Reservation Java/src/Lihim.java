@@ -11,6 +11,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.awt.FontFormatException;
 import javax.swing.border.TitledBorder;
+import java.awt.Desktop;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 class Room {
     String roomNumber;
@@ -215,21 +218,26 @@ public class Lihim {
 
         // Reset Button
         JButton resetButton = new JButton("Reset");
-        resetButton.setBounds(380, 70, 120, 25);
+        resetButton.setBounds(380, 90, 120, 25);
         resetButton.addActionListener(e -> resetFields());
         createRoomPanel.add(resetButton);
 
         // Update Room Button
         JButton updateRoomButton = new JButton("Update Room");
-        updateRoomButton.setBounds(380, 110, 120, 25);
+        updateRoomButton.setBounds(530, 30, 120, 25);
         updateRoomButton.addActionListener(e -> updateRoomAction());
         createRoomPanel.add(updateRoomButton);
 
         // Delete Room Button
         JButton deleteRoomButton = new JButton("Delete Room");
-        deleteRoomButton.setBounds(380, 150, 120, 25);
+        deleteRoomButton.setBounds(530, 90, 120, 25);
         deleteRoomButton.addActionListener(e -> deleteRoomAction());
         createRoomPanel.add(deleteRoomButton);
+
+        JButton openWebsiteButton = new JButton("Visit our Website");
+        openWebsiteButton.setBounds(380, 150, 270, 25);
+        openWebsiteButton.addActionListener(e -> openWebsite("https://genshin.hoyoverse.com/en/gift"));
+        createRoomPanel.add(openWebsiteButton);
 
         frame.add(guestPanel);
         frame.add(roomPanel);
@@ -291,7 +299,7 @@ public class Lihim {
                     .append("Email: ").append(email).append("\n")
                     .append("Phone: ").append(phone).append("\n")
                     .append("Room: ").append(selectedRoom).append("\n")
-                    .append("Price: ").append(roomPrice).append("\n") // Price here
+                    .append("Price: ").append(roomPrice).append("\n")
                     .append("Check-in: ").append(checkInDate).append("\n")
                     .append("Check-out: ").append(checkOutDate).append("\n");
 
@@ -376,6 +384,15 @@ public class Lihim {
         checkOutChooser.setDate(null);
         bookingInfoArea.setText("");
         resetRoomFields();
+    }
+
+    private void openWebsite(String url) {
+        try {
+            Desktop.getDesktop().browse(new URI(url));
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(frame, "Failed to open website.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public static void main(String[] args) {
