@@ -32,7 +32,7 @@
         <div class="overlay"></div>
         <div class="video-container">
             <video autoplay muted loop>
-                <source src="videos/Bantayan Island.webm" type="video/mp4">
+                <source src="videos/part 1.mp4" type="video/mp4">
             </video>
         </div>
         <div class="content">
@@ -43,7 +43,7 @@
             </p>
             <div class="visit">
                 <h4><a href="#visit">Visit</a></h4>
-                <div class="arrow"><img src="images/arrow.png" alt="arrow"></div>
+                <div class="arrow"><a href="#visit"><img src="images/arrow.png" alt="arrow"></a></div>
             </div>
         </div>
     </section>
@@ -83,22 +83,25 @@
     </section>
 
     <section class="three">
-        <div class="overlay"></div>
+        <div class="overlay"></div> <!-- Overlay for the video background -->
         <div class="video-container">
             <video autoplay muted loop>
-                <source src="videos/Bantayan Island.webm" type="video/mp4">
+                <source src="videos/part 2.mp4" type="video/mp4">
             </video>
         </div>
     
         <div class="book">
             <div class="diamond-container">
                 <div class="diamond">
+                    <div class="border"></div>
                     <img src="images/pic4.jpg" alt="Diamond Image 1">
                 </div>
                 <div class="diamond">
+                    <div class="border"></div>
                     <img src="images/pic5.jpg" alt="Diamond Image 2">
                 </div>
                 <div class="diamond">
+                    <div class="border"></div>
                     <img src="images/pic6.jpg" alt="Diamond Image 3">
                 </div>
             </div>
@@ -110,6 +113,12 @@
                     and book your stay now for an unforgettable experience in paradise!
                 </p>
             </div>
+
+            <div class="button-container">
+            <button class="book-now" onclick="openJavaApp()">
+                Book Now
+            </button>
+        </div>
         </div>
     </section>
     
